@@ -35,16 +35,20 @@
                         <div id="login">
                             <div class="alert alert-danger" role="alert">C'mon now! You gotta be somebody! Enter your name...</div>
                             <h3>Who are you?</h3>
-                            <input type="text" name="username" id="username" />
-                            <button type="submit" class="btn btn-info">Sign in</button>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="What's your name?" />
+                                <button type="submit" class="btn btn-info">Sign in</button>
+                            </div>
                         </div>
                         <div id="chat">
                             <div id="signedIn">
                                 <h4 id="greeting" class="display-4"></h4>
                                 <button type="button" id="btnSignOut" class="btn btn-link">Sign Out</button>
                             </div>
-                            <input type="text" name="message" id="message" autofocus />
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-lg" name="message" id="message" placeholder="Say something..." autofocus />
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
                             <div id="messagesContainer">
                                 <div class="row">
                                     <div class="col-2 header">IP Address</div>

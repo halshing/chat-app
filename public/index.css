@@ -19,3 +19,6 @@
 .header {
     font-weight: bold;
 }
+.message {
+    width: 400px;
+}
