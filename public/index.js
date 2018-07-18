@@ -77,10 +77,10 @@ $(function () {
     function updateChat(data) {
         msgArea.prepend(`
             <div class='row'>
-                <div class='col-3 ipaddress'>${data.IPAddress}</div>
+                <div class='col-2 ipaddress'>${data.IPAddress}</div>
                 <div class='col-3 datecreated'>${(new Date(data.created)).toLocaleString()}</div>
-                <div class='col-3 username'>${data.user}</div>
-                <div class='col-6 message'>${data.message}</div>                
+                <div class='col-2 username'>${data.user}</div>
+                <div class='col-5 message'>${data.message}</div>                
             </div>
         `);
     }
