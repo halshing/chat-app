@@ -15,7 +15,8 @@ let sendToConnectedClients = data => {
 
 app.use(express.static('public'));
 
-app.ws('/', (ws, req) => {  
+app.ws('/', (ws, req) => {
+    console.log(ws);  
     // Add the current connection to our tracker
     connections.push(ws);
 

@@ -9,7 +9,7 @@ function database(dbPath) {
         mkdirp(getDirName(path), err => {
             if (err) return callback(err);
             fs.writeFile(path, content, callback);
-        })
+        });
     }
 
     this.getChats = () => {
@@ -35,7 +35,6 @@ function database(dbPath) {
     this.update = content => {
         fs.writeFile(dbPath, JSON.stringify(content), err => {
             if (err) throw err;
-            console.log('database updated');
         });
     }
 }
