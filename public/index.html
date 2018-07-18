@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Private Shingieti Chat</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Private Chat</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="loader"></div>
+                    <form id="chatapp">
+                        <div id="login">
+                            <div class="alert alert-danger" role="alert">C'mon now! You gotta be somebody! Enter your name...</div>
+                            <h3>Who are you?</h3>
+                            <input type="text" name="username" id="username" />
+                            <button type="submit" class="btn btn-info">Sign in</button>
+                        </div>
+                        <div id="chat">
+                            <div id="signedIn">
+                                <h4 id="greeting" class="display-4"></h4>
+                                <button type="button" id="btnSignOut" class="btn btn-link">Sign Out</button>
+                            </div>
+                            <input type="text" name="message" id="message" autofocus />
+                            <button type="submit" class="btn btn-primary">Send</button>
+                            <div id="messagesContainer">
+                                <div class="row">
+                                    <div class="col-3 header">Date</div>
+                                    <div class="col-3 header">User</div>
+                                    <div class="col-6 header">Messsage</div>
+                                </div>
+                                <div id="messages"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+#chatapp {
+    display: none;
+}
+#loader {
+    background: url('loader.gif') no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 200px;
+}
+#login .alert {
+    display: none;
+}
+#greeting {
+    display: inline-block;
+}
+#btnSignOut {
+    vertical-align: text-bottom;
+}
+.header {
+    font-weight: bold;
+}
