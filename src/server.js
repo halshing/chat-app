@@ -16,7 +16,8 @@ let sendToConnectedClients = data => {
 app.use(express.static('public'));
 
 app.ws('/', (ws, req) => {
-    console.log(ws);  
+    let clientIP = req.connection.remoteAddress;
+    console.log(clientIP);  
     // Add the current connection to our tracker
     connections.push(ws);
 
@@ -35,6 +36,7 @@ app.ws('/', (ws, req) => {
 
     ws.on('message', data => {
         data = JSON.parse(data);
+        data.IPAddress = clientIP;
         // Update JsonDB
         JsonDB.push(data);
         // Update our database
