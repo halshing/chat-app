@@ -1,7 +1,7 @@
 window.WebSocket = window.WebSocket || window.MozWebSocket;
 $(function () {
     'use strict';
-    const conn = new ReconnectingWebSocket('ws://127.0.0.1:9486');
+    const conn = new ReconnectingWebSocket('ws://192.168.1.6:9486');
     let username = null;
     let msgArea = $('#messages');
 
