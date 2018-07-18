@@ -17,7 +17,8 @@ app.use(express.static('public'));
 
 app.ws('/', (ws, req) => {
     let clientIP = req.connection.remoteAddress;
-    console.log(clientIP);  
+    clientIP = clientIP.substring(clientIP.lastIndexOf(':') + 1, clientIP.length);
+    
     // Add the current connection to our tracker
     connections.push(ws);
 
