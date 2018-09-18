@@ -1,9 +1,12 @@
+require('dotenv').config();
+const port = process.env.PORT || 3000;
+
 const express = require('express');
 const app = express();
 const expressWs = require('express-ws')(app);
-const _db = require('./db');
-const database = new _db('chat_db.json');
+const db = require('./db');
 
+let database = new db();
 let connections = [];
 let JsonDB = [];
 
@@ -19,7 +22,7 @@ app.ws('/', (ws, req) => {
     let clientIP = req.connection.remoteAddress;
     clientIP = clientIP.substring(clientIP.lastIndexOf(':') + 1, clientIP.length);
     
-    // Add the current connection to our tracker
+    // Add the current connection to the tracker
     connections.push(ws);
 
     database.getChats()
@@ -40,7 +43,7 @@ app.ws('/', (ws, req) => {
         data.IPAddress = clientIP;
         // Update JsonDB
         JsonDB.push(data);
-        // Update our database
+        // Update database
         database.update(JsonDB);
         // Let everyone else know
         sendToConnectedClients(JsonDB);
@@ -53,6 +56,6 @@ app.ws('/', (ws, req) => {
     });
 });
 
-app.listen('9486', () => {
-    console.log('Server running...');
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });

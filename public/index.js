@@ -1,7 +1,7 @@
 window.WebSocket = window.WebSocket || window.MozWebSocket;
 $(function () {
     'use strict';
-    const conn = new ReconnectingWebSocket('ws://192.168.1.6:9486');
+    const conn = new ReconnectingWebSocket('ws://localhost:3000');
     let username = null;
     let msgArea = $('#messages');
 
@@ -9,7 +9,7 @@ $(function () {
         console.log('Connection open...');
 
         // Wait to show the app until we have connection
-        $('#chatapp').show()
+        $('#chatapp').show();
         $('#loader').hide();
 
         username = localStorage.getItem('username');
@@ -25,12 +25,12 @@ $(function () {
         if (result) {
             result = JSON.parse(result.data);
             if (result.wsOn) {
-                console.log('all messages')
+                // All messages
                 result.messages.forEach(msg => {
                     updateChat(msg);
                 });
             } else {
-                console.log('latest message');
+                // Latest message
                 updateChat(result[result.length - 1]);
             }
         }
